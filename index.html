@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boids</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/js/lib/p5.min.js"></script>
+    <script defer type="module" src="/js/index.js"></script>
+  </head>
+  <body>
+    <h1 id="title">Help Wouter leren zwemmen!</h1>
+    <div class="screen intro">
+      <div class="scroll-info">
+        <p class="info">Scroll naar beneden om te beginnen!</p>
+        <p class="arrow">V</p>
+      </div>
+
+      <div class="boids"></div>
+    </div>
+
+    <div class="screen standard-screen wouter-intro">
+      <div class="boids"></div>
+      <div class="content">
+        <p class="title fly-in-left">Hoi!<br />ik ben Wouter.</p>
+        <div id="wouter-target"></div>
+        <p class="story fly-in-right">
+          Ik wil graag met mijn vissenvriendjes samen in een school zwemmen.
+          <br />
+          Kun jij me helpen?
+        </p>
+      </div>
+    </div>
+
+    <div class="screen standard-screen separation-problem">
+      <div class="content">
+        <p class="title fly-in-left">
+          Op dit moment zwemt Wouter recht door zijn vriendjes heen.
+        </p>
+        <p class="story fly-in-right">Zullen we hier wat aan doen?</p>
+      </div>
+      <div class="boids"></div>
+    </div>
+
+    <div class="screen standard-screen separation-solution">
+      <div class="content">
+        <p class="title fly-in-left">
+          Stap 1:
+          <br />
+          Separation
+        </p>
+        <p class="story fly-in-right">
+          In de <i>separation</i> stap zorgen we er voor dat als vissen te dicht
+          bij elkaar komen, we ze van elkaar weg sturen.
+        </p>
+      </div>
+      <div class="boids"></div>
+    </div>
+
+    <div class="screen standard-screen separation-explaination">
+      <div class="boids"></div>
+      <div class="content">
+        <p class="title">Hoe werkt <i>separation</i>?</p>
+        <p class="story">
+          Eerst kijken we of een vis te dicht bij een andere vis komt. Als dit
+          het geval is, dan sturen we die vis de tegengestelde richting op.
+        </p>
+        <p class="story">
+          De <span style="color: red">rode</span> pijlen geven de richting aan
+          waar de vis naartoe wordt gestuurd door de <i>separationkracht</i>
+        </p>
+      </div>
+    </div>
+
+    <div class="screen standard-screen alignment-problem">
+      <div class="content">
+        <p class="title fly-in-left">
+          Het volgende probleem dat Wouter heeft is dat hij nu nog alleen zwemt.
+        </p>
+        <p class="story fly-in-right">
+          Hier komt de volgende stap van pas: <i>alignment</i>.
+        </p>
+      </div>
+      <div class="boids"></div>
+    </div>
+
+    <div class="screen standard-screen alignment-solution">
+      <div class="content">
+        <p class="title fly-in-left">
+          Stap 2:
+          <br />
+          Alignment
+        </p>
+        <p class="story fly-in-right">
+          In de <i>alignment</i> stap zorgen we er voor dat de vissen bij elkaar
+          in de buurt de zelfde kant op zwemmen.
+        </p>
+      </div>
+      <div class="boids"></div>
+    </div>
+
+    <div class="screen standard-screen alignment-explaination">
+      <div class="boids"></div>
+      <div class="content">
+        <p class="title">Hoe werkt <i>alignment</i>?</p>
+        <p class="story">
+          Om de vissen dezelfde kant op te laten zwemmen nemen we de gemiddelde
+          richting van de andere vissen rondom een vis.
+        </p>
+        <p class="story">
+          De <span style="color: #1bdd1b">groene</span> pijlen geven de richting
+          aan waar de vis naartoe wordt gestuurd door de
+          <i>alignmentkracht</i>
+        </p>
+      </div>
+    </div>
+
+    <div class="screen standard-screen cohesion-problem">
+      <div class="content">
+        <p class="title fly-in-left">
+          Het enige probleem wat we nu hebben is dat de vissen elkaar soms kwijt
+          raken.
+        </p>
+        <p class="story fly-in-right">
+          Hiervoor hebben we de laatste stap: <i>cohesion</i>.
+        </p>
+      </div>
+      <div class="boids"></div>
+    </div>
+
+    <div class="screen standard-screen cohesion-solution">
+      <div class="content">
+        <p class="title fly-in-left">
+          Stap 3:
+          <br />
+          Cohesion
+        </p>
+        <p class="story fly-in-right">
+          Bij de <i>cohesion</i> stap brengen we de vissen die samen zwemmen wat
+          dichter bij elkaar zodat ze elkaar niet kwijt raken.
+        </p>
+      </div>
+      <div class="boids"></div>
+    </div>
+
+    <div class="screen standard-screen cohesion-explaination">
+      <div class="boids"></div>
+      <div class="content">
+        <p class="title">Hoe werkt <i>cohesion</i>?</p>
+        <p class="story">
+          Om de vissen bij elkaar te houden nemen we de
+          <i>gemiddelde</i> positie van de andere vissen rondom een vis. We
+          sturen de vis een beetje de kant op van die gemiddelde positie.
+        </p>
+        <p class="story">
+          De <span style="color: #0000ff">blauwe</span> pijlen geven de richting
+          aan waar de vis naartoe wordt gestuurd door de
+          <i>cohesionkracht</i>
+        </p>
+      </div>
+    </div>
+
+    <div class="screen standard-screen end">
+      <div class="content">
+        <p class="title">Yes! Het is gelukt!</p>
+        <p class="story">
+          Nu kan Wouter eindelijk lekker zwemmen door het water met zijn
+          vrienden. Goed gedaan!
+        </p>
+      </div>
+      <div class="boids"></div>
+    </div>
+
+    <div class="wouter"></div>
+  </body>
+</html>
